@@ -1,27 +1,48 @@
 #!/usr/bin/python3
+""" A python file which contains a class with the
+properties and operations of a square"""
 
-class square():
-    width = 0
-    height = 0
+class Square:
+    """
+    A class representing a square.
+    
+    Attributes:
+    - width: The width of the square.
+    - height: The height of the square.
+    """
 
-    def __init__(self, *args, **kwargs):
-        for key, value in kwargs.items():
-            setattr(self, key, value)
+    def __init__(self, width=0, height=0):
+        """
+        Initializes a square with the given width and height.
+        
+        Args:
+        - width: The width of the square.
+        - height: The height of the square.
+        """
+        self.width = width
+        self.height = height
 
     def area_of_my_square(self):
-        """ Area of the square """
-        return self.width * self.width
+        """
+        Returns the area of the square.
+        """
+        return self.width * self.height
 
-    def PermiterOfMySquare(self):
+    def perimeter_of_my_square(self):
+        """
+        Returns the perimeter of the square.
+        """
         return (self.width * 2) + (self.height * 2)
 
     def __str__(self):
+        """
+        Returns a string representation of the square
+        in this format 'width/height'.
+        """
         return "{}/{}".format(self.width, self.height)
 
-
 if __name__ == "__main__":
-
-    s = square(width=12, height=9)
+    s = Square(width=12, height=9)
     print(s)
     print(s.area_of_my_square())
-    print(s.PermiterOfMySquare())
+    print(s.perimeter_of_my_square())
